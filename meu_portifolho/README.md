@@ -111,7 +111,7 @@ Se quiser conversar sobre projetos, oportunidades ou só trocar uma ideia sobre 
 
 - **Email**: renan.gomesdf3@email.com
 - **LinkedIn**: linkedin.com/in/renangomeslobo
-- **GitHub**: github.com/renangomeslobo10
+- **GitHub**: [github.com/renangomeslobo10](https://github.com/Renandf143)
 - **Telefone**: (61) 99947-1051
 - **Instagram**: @renan.gomeslobo
 
