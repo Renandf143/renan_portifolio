@@ -1,23 +1,4 @@
-# Netlify
-.netlify/
-
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-
-# OS
-.DS_Store
-Thumbs.db
-
-# Logs
+node_modules/
 *.log
-npm-debug.log*
-
-# Temporary files
-*.tmp
-*.temp
-
-# Cache
-.cache/
+.DS_Store
+.env
