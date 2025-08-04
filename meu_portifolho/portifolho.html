@@ -3,228 +3,468 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfólio - Renan Gomes Lobo</title>
-    <link rel="stylesheet" href="styler.css" />
+    <title>Projetos - Renan Gomes Lobo</title>
+    <meta
+      name="description"
+      content="Conheça os projetos desenvolvidos por Renan Gomes Lobo: aplicações web, sistemas desktop e apps mobile com Python, Django, JavaScript e Kivy."
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+
+      .header-blur {
+        backdrop-filter: blur(10px);
+        background: rgba(255, 255, 255, 0.9);
+      }
+
+      .text-blue-gradient {
+        background: linear-gradient(135deg, #0284c7, #0369a1);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .card-hover {
+        transition: all 0.3s ease;
+      }
+
+      .card-hover:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+      }
+
+      .btn-primary {
+        background: #0284c7;
+        transition: all 0.3s ease;
+      }
+
+      .btn-primary:hover {
+        background: #0369a1;
+        transform: translateY(-2px);
+      }
+
+      .btn-secondary {
+        background: #6b7280;
+        transition: all 0.3s ease;
+      }
+
+      .btn-secondary:hover {
+        background: #4b5563;
+        transform: translateY(-2px);
+      }
+
+      .menu-mobile {
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+      }
+
+      .menu-mobile.active {
+        transform: translateX(0);
+      }
+
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.6s ease;
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
   </head>
-  <body>
-    <header class="menu">
-      <div class="conteudo1">
-        <h1 class="logo">Renan Gomes</h1>
-        <nav class="navegacao">
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="portifolho.html">Meus Projetos</a></li>
-            <li><a href="contato.html">Contato</a></li>
-          </ul>
+  <body class="bg-gray-50">
+    <!-- Header -->
+    <header
+      class="fixed top-0 w-full z-50 header-blur border-b border-gray-200"
+    >
+      <div class="max-w-6xl mx-auto px-4 py-3">
+        <div class="flex justify-between items-center">
+          <h1 class="text-xl font-bold text-blue-gradient">Renan Gomes</h1>
+
+          <nav class="hidden md:flex space-x-6">
+            <a
+              href="index.html"
+              class="text-gray-700 hover:text-blue-600 font-medium"
+              >Home</a
+            >
+            <a href="portifolho.html" class="text-blue-600 font-medium"
+              >Projetos</a
+            >
+            <a
+              href="contato.html"
+              class="text-gray-700 hover:text-blue-600 font-medium"
+              >Contato</a
+            >
+          </nav>
+
+          <button class="md:hidden p-2" onclick="toggleMenu()">
+            <div class="w-5 h-0.5 bg-gray-700 mb-1"></div>
+            <div class="w-5 h-0.5 bg-gray-700 mb-1"></div>
+            <div class="w-5 h-0.5 bg-gray-700"></div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Menu Mobile -->
+      <div
+        id="mobileMenu"
+        class="menu-mobile md:hidden fixed inset-0 top-16 bg-white"
+      >
+        <nav class="p-6 space-y-4">
+          <a href="index.html" class="block text-gray-700 text-lg">Home</a>
+          <a
+            href="portifolho.html"
+            class="block text-blue-600 text-lg font-medium"
+            >Projetos</a
+          >
+          <a href="contato.html" class="block text-gray-700 text-lg">Contato</a>
         </nav>
       </div>
     </header>
 
-    <main class="main-portifolho">
-      <div class="conteudo1">
-        <h2 class="page-title">Meus Projetos</h2>
+    <!-- Hero Section -->
+    <section class="pt-20 pb-12 bg-white">
+      <div class="max-w-6xl mx-auto px-6 text-center">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gray-800 fade-in">
+          Projetos em Destaque
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8 fade-in">
+          Cada projeto representa uma jornada de aprendizado e inovação. Aqui
+          você encontra soluções que desenvolvi com paixão, desde aplicações web
+          modernas até sistemas desktop complexos.
+        </p>
+      </div>
+    </section>
 
-        <div class="projects-grid">
+    <!-- Projects Section -->
+    <section class="py-12 bg-gray-50">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-8">
           <!-- Projeto 1: Restaurante Delícia -->
-          <div class="project-card">
+          <div
+            class="bg-white rounded-lg shadow-lg card-hover fade-in overflow-hidden"
+          >
             <img
-              src="images/restaurante-delicia.png"
+              src="https://via.placeholder.com/400x250/f59e0b/ffffff?text=Restaurante+Delicia"
               alt="Site do Restaurante Delícia"
-              class="project-image"
+              class="w-full h-48 object-cover"
             />
-            <h3 class="project-title">Site Restaurante Delícia</h3>
-            <p class="project-description">
-              Site responsivo para restaurante com design elegante em tons
-              dourados. Possui navegação completa, seções organizadas e layout
-              profissional.
-            </p>
-            <div class="project-tech">
-              <strong>Tecnologias:</strong> HTML5, CSS3, JavaScript, Design
-              Responsivo
-            </div>
-            <div class="project-links">
-              <a
-                href="https://restaurantedelicia.netlify.app/"
-                target="_blank"
-                class="botao project-link"
-                >Ver Site Online</a
-              >
-              <a
-                href="https://github.com/renangomeslobo10/restaurante-delicia"
-                target="_blank"
-                class="botao project-link secondary"
-                >Repositório GitHub</a
-              >
+            <div class="p-6">
+              <h3 class="text-2xl font-bold text-gray-800 mb-3">
+                Restaurante Delícia
+              </h3>
+              <p class="text-gray-600 mb-4 leading-relaxed">
+                Uma experiência gastronômica digital completa. Desenvolvi este
+                site responsivo com foco na elegância visual e usabilidade,
+                utilizando uma paleta dourada sofisticada que reflete a
+                qualidade do estabelecimento.
+              </p>
+              <div class="mb-4 p-3 bg-gray-50 rounded-lg">
+                <strong class="text-gray-800">Tecnologias:</strong>
+                <span class="text-gray-600"
+                  >HTML5, CSS3, JavaScript, Design Responsivo</span
+                >
+              </div>
+              <div class="flex flex-col sm:flex-row gap-3">
+                <a
+                  href="https://restaurantedelicia.netlify.app/"
+                  target="_blank"
+                  class="btn-primary text-white px-4 py-2 rounded-lg font-medium text-center"
+                  >Ver Site Online</a
+                >
+                <a
+                  href="https://github.com/renangomeslobo10/restaurante-delicia"
+                  target="_blank"
+                  class="btn-secondary text-white px-4 py-2 rounded-lg font-medium text-center"
+                  >Repositório GitHub</a
+                >
+              </div>
             </div>
           </div>
 
           <!-- Projeto 2: Infinity Park 215 -->
-          <div class="project-card">
-            <img src="" alt="Sistema Infinity Park 215" class="project-image" />
-            <h3 class="project-title">Sistema Infinity Park 215</h3>
-            <p class="project-description">
-              Sistema completo de gerenciamento para parque de diversões.
-              Interface desktop com 20+ telas, banco de dados robusto e
-              funcionalidades avançadas.
-            </p>
-            <div class="project-features">
-              <strong>Principais funcionalidades:</strong>
-              <ul>
-                <li>Sistema de login e cadastro</li>
-                <li>Gestão de atrações e shows</li>
-                <li>Compra de ingressos</li>
-                <li>Check-ins gamificados</li>
-                <li>Painel administrativo</li>
-              </ul>
-            </div>
-            <div class="project-tech">
-              <strong>Tecnologias:</strong> Python, Kivy, SQLite, MySQL,
-              Arquitetura MVC
-            </div>
-            <div class="project-links">
-              <a
-                href="https://gist.github.com/renangomeslobo/infinity-park-code"
-                target="_blank"
-                class="botao project-link"
-                >Ver Código</a
-              >
-              <a
-                href="https://github.com/renangomeslobo10/infinity-park-215"
-                target="_blank"
-                class="botao project-link secondary"
-                >Repositório</a
-              >
+          <div
+            class="bg-white rounded-lg shadow-lg card-hover fade-in overflow-hidden"
+          >
+            <img
+              src="https://via.placeholder.com/400x250/8b5cf6/ffffff?text=Infinity+Park+215"
+              alt="Sistema Infinity Park 215"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-2xl font-bold text-gray-800 mb-3">
+                Infinity Park 215
+              </h3>
+              <p class="text-gray-600 mb-4 leading-relaxed">
+                Meu projeto mais ambicioso: um sistema completo de gerenciamento
+                para parque de diversões. Esta aplicação desktop possui mais de
+                20 telas interconectadas, desde o cadastro de visitantes até o
+                controle de atrações em tempo real.
+              </p>
+              <div class="mb-4">
+                <strong class="text-gray-800 block mb-2"
+                  >Principais funcionalidades:</strong
+                >
+                <ul class="text-gray-600 text-sm space-y-1">
+                  <li>• Sistema de login e cadastro</li>
+                  <li>• Gestão de atrações e shows</li>
+                  <li>• Compra de ingressos</li>
+                  <li>• Check-ins gamificados</li>
+                  <li>• Painel administrativo</li>
+                </ul>
+              </div>
+              <div class="mb-4 p-3 bg-gray-50 rounded-lg">
+                <strong class="text-gray-800">Tecnologias:</strong>
+                <span class="text-gray-600"
+                  >Python, Kivy, SQLite, MySQL, Arquitetura MVC</span
+                >
+              </div>
+              <div class="flex flex-col sm:flex-row gap-3">
+                <a
+                  href="https://github.com/Renandf143/Infinity-Park-dasktop-/tree/main/Downloads/infinity%20park%20dasktop"
+                  target="_blank"
+                  class="btn-primary text-white px-4 py-2 rounded-lg font-medium text-center"
+                  >Ver Código</a
+                >
+                <a
+                  href="https://github.com/Renandf143/Infinity-Park-dasktop-"
+                  target="_blank"
+                  class="btn-secondary text-white px-4 py-2 rounded-lg font-medium text-center"
+                  >Repositório</a
+                >
+              </div>
             </div>
           </div>
 
           <!-- Projeto 3: Portfólio Web -->
-          <div class="project-card">
+          <div
+            class="bg-white rounded-lg shadow-lg card-hover fade-in overflow-hidden"
+          >
             <img
-              src="images/portfolio-preview.png"
+              src="https://via.placeholder.com/400x250/0284c7/ffffff?text=Portfolio+Web"
               alt="Portfólio Web Pessoal"
-              class="project-image"
+              class="w-full h-48 object-cover"
             />
-            <h3 class="project-title">Portfólio Web Pessoal</h3>
-            <p class="project-description">
-              Este próprio site! Desenvolvido do zero com HTML, CSS e JavaScript
-              puro. Design responsivo e limpo para apresentar projetos
-              profissionalmente.
-            </p>
-            <div class="project-tech">
-              <strong>Tecnologias:</strong> HTML5, CSS3, JavaScript, CSS Grid,
-              Flexbox
-            </div>
-            <div class="project-links">
-              <a href="index.html" class="botao project-link"
-                >Ver Site Completo</a
-              >
-              <a
-                href="https://github.com/renangomeslobo/portfolio-web"
-                target="_blank"
-                class="botao project-link secondary"
-                >Código Fonte</a
-              >
+            <div class="p-6">
+              <h3 class="text-2xl font-bold text-gray-800 mb-3">
+                Portfólio Pessoal
+              </h3>
+              <p class="text-gray-600 mb-4 leading-relaxed">
+                O site que você está navegando agora! Desenvolvido completamente
+                do zero com HTML5, CSS3 e JavaScript vanilla. Focado em
+                performance, acessibilidade e design responsivo, demonstrando
+                minha abordagem clean code.
+              </p>
+              <div class="mb-4 p-3 bg-gray-50 rounded-lg">
+                <strong class="text-gray-800">Tecnologias:</strong>
+                <span class="text-gray-600"
+                  >HTML5, CSS3, JavaScript, TailwindCSS, Design Responsivo</span
+                >
+              </div>
+              <div class="flex flex-col sm:flex-row gap-3">
+                <a
+                  href="index.html"
+                  class="btn-primary text-white px-4 py-2 rounded-lg font-medium text-center"
+                  >Ver Site Completo</a
+                >
+                <a
+                  href="https://github.com/Renandf143/meu-portfolio-web"
+                  target="_blank"
+                  class="btn-secondary text-white px-4 py-2 rounded-lg font-medium text-center"
+                  >Código Fonte</a
+                >
+              </div>
             </div>
           </div>
 
           <!-- Projeto 4: App Mobile Kivy -->
-          <div class="project-card">
+          <div
+            class="bg-white rounded-lg shadow-lg card-hover fade-in overflow-hidden"
+          >
             <img
-              src="images/mobile-app-kivy.png"
+              src="https://via.placeholder.com/400x250/10b981/ffffff?text=Mobile+App+Kivy"
               alt="App Mobile com Kivy"
-              class="project-image"
+              class="w-full h-48 object-cover"
             />
-            <h3 class="project-title">App Mobile com Kivy</h3>
-            <p class="project-description">
-              Aplicação mobile multiplataforma desenvolvida com Python + Kivy.
-              Demonstra a versatilidade do Python além do desenvolvimento web.
-            </p>
-            <div class="project-features">
-              <strong>Características:</strong>
-              <ul>
-                <li>Interface adaptativa para mobile</li>
-                <li>Integração com SQLite</li>
-                <li>Widgets customizados</li>
-                <li>Compatível Android/iOS</li>
-              </ul>
-            </div>
-            <div class="project-tech">
-              <strong>Tecnologias:</strong> Python, Kivy, SQLite, Design
-              Mobile-First
-            </div>
-            <div class="project-links">
-              <a
-                href="https://github.com/renangomeslobo/mobile-kivy-app"
-                target="_blank"
-                class="botao project-link"
-                >Ver Repositório</a
-              >
-              <a
-                href="https://gist.github.com/renangomeslobo/kivy-mobile-code"
-                target="_blank"
-                class="botao project-link secondary"
-                >Código Exemplo</a
-              >
+            <div class="p-6">
+              <h3 class="text-2xl font-bold text-gray-800 mb-3">
+                App Mobile Multiplataforma
+              </h3>
+              <p class="text-gray-600 mb-4 leading-relaxed">
+                Uma demonstração da versatilidade do Python no desenvolvimento
+                mobile. Este aplicativo, construído com Kivy, roda nativamente
+                em Android e iOS, provando que é possível criar experiências
+                mobile robustas.
+              </p>
+              <div class="mb-4">
+                <strong class="text-gray-800 block mb-2"
+                  >Características:</strong
+                >
+                <ul class="text-gray-600 text-sm space-y-1">
+                  <li>• Interface adaptativa para mobile</li>
+                  <li>• Integração com SQLite</li>
+                  <li>• Widgets customizados</li>
+                  <li>• Compatível Android/iOS</li>
+                </ul>
+              </div>
+              <div class="mb-4 p-3 bg-gray-50 rounded-lg">
+                <strong class="text-gray-800">Tecnologias:</strong>
+                <span class="text-gray-600"
+                  >Python, Kivy, SQLite, Design Mobile-First</span
+                >
+              </div>
+              <div class="flex flex-col sm:flex-row gap-3">
+                <a
+                  href="https://github.com/renangomeslobo/mobile-kivy-app"
+                  target="_blank"
+                  class="btn-primary text-white px-4 py-2 rounded-lg font-medium text-center"
+                  >Ver Repositório</a
+                >
+                <a
+                  href="https://github.com/Renandf143/Infinity-Park-dasktop-/tree/main/Downloads/infinity%20park%20dasktop"
+                  target="_blank"
+                  class="btn-secondary text-white px-4 py-2 rounded-lg font-medium text-center"
+                  >Código Exemplo</a
+                >
+              </div>
             </div>
           </div>
 
-          <!-- Projeto 5: Sistema Django -->
-          <div class="project-card">
+          <!-- Projeto 5: Sistema Web Infinity Park Django -->
+          <div
+            class="bg-white rounded-lg shadow-lg card-hover fade-in overflow-hidden"
+          >
             <img
-              src="images/django-system.png"
-              alt="Sistema Web com Django"
-              class="project-image"
+              src="https://via.placeholder.com/400x250/dc2626/ffffff?text=Django+Infinity+Park"
+              alt="Sistema Web Infinity Park Django"
+              class="w-full h-48 object-cover"
             />
-            <h3 class="project-title">Sistema Web com Django</h3>
-            <p class="project-description">
-              Aplicação web robusta com Django, focada em backend sólido e APIs
-              RESTful. Demonstra conhecimento em arquitetura web escalável.
-            </p>
-            <div class="project-features">
-              <strong>Funcionalidades:</strong>
-              <ul>
-                <li>Sistema de autenticação</li>
-                <li>CRUD com validações</li>
-                <li>APIs REST documentadas</li>
-                <li>Integração com MySQL</li>
-                <li>Testes automatizados</li>
-              </ul>
-            </div>
-            <div class="project-tech">
-              <strong>Tecnologias:</strong> Python, Django, MySQL, Django REST
-              Framework, JWT
-            </div>
-            <div class="project-links">
-              <a
-                href="https://github.com/renangomeslobo/django-web-system"
-                target="_blank"
-                class="botao project-link"
-                >Ver Repositório</a
-              >
-              <a
-                href="https://gist.github.com/renangomeslobo/django-api-examples"
-                target="_blank"
-                class="botao project-link secondary"
-                >Exemplos API</a
-              >
+            <div class="p-6">
+              <h3 class="text-2xl font-bold text-gray-800 mb-3">
+                Sistema Web Infinity Park
+              </h3>
+              <p class="text-gray-600 mb-4 leading-relaxed">
+                Versão web do sistema Infinity Park desenvolvida com Django. Uma
+                aplicação web completa para gerenciamento de parque de
+                diversões, demonstrando minha evolução do desktop para
+                desenvolvimento web full-stack.
+              </p>
+              <div class="mb-4">
+                <strong class="text-gray-800 block mb-2"
+                  >Funcionalidades:</strong
+                >
+                <ul class="text-gray-600 text-sm space-y-1">
+                  <li>• Sistema de autenticação web</li>
+                  <li>• Interface administrativa Django</li>
+                  <li>• Gestão de visitantes e atrações</li>
+                  <li>• Dashboard responsivo</li>
+                  <li>• Integração com banco de dados</li>
+                </ul>
+              </div>
+              <div class="mb-4 p-3 bg-gray-50 rounded-lg">
+                <strong class="text-gray-800">Tecnologias:</strong>
+                <span class="text-gray-600"
+                  >Python, Django, HTML5, CSS3, SQLite, Bootstrap</span
+                >
+              </div>
+              <div class="flex flex-col sm:flex-row gap-3">
+                <a
+                  href="https://github.com/Renandf143/sistema-web-infinity-park/tree/main/InfinityPark/Infinity%20Park/InfinityPark/Projeto%20django"
+                  target="_blank"
+                  class="btn-primary text-white px-4 py-2 rounded-lg font-medium text-center"
+                  >Ver Código</a
+                >
+                <a
+                  href="https://github.com/Renandf143/sistema-web-infinity-park"
+                  target="_blank"
+                  class="btn-secondary text-white px-4 py-2 rounded-lg font-medium text-center"
+                  >Repositório</a
+                >
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </main>
+    </section>
 
-    <footer class="rodape">
-      <div class="conteudo1">
-        <p>&copy; 2025 Renan Gomes Lobo - Desenvolvedor Fullstack Junior</p>
-        <div class="links-sociais">
-          <a href="#" target="_blank">LinkedIn</a>
-          <a href="#" target="_blank">GitHub</a>
-          <a href="mailto:renan.gomesdf3@email.com">Email</a>
-          <a href="https://www.instagram.com/renan.gomeslobo" target="_blank"
-            >Instagram</a
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+      <div class="max-w-6xl mx-auto px-6 text-center">
+        <p class="mb-6">
+          © 2025 Renan Gomes Lobo - Desenvolvedor Fullstack Junior
+        </p>
+        <div class="flex justify-center space-x-6">
+          <a href="#" class="text-gray-400 hover:text-white transition-colors">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286z"
+              />
+            </svg>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-white transition-colors">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+              />
+            </svg>
+          </a>
+          <a
+            href="mailto:renan.gomesdf3@email.com"
+            class="text-gray-400 hover:text-white transition-colors"
           >
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"
+              />
+            </svg>
+          </a>
+          <a
+            href="https://www.instagram.com/renan.gomeslobo"
+            class="text-gray-400 hover:text-white transition-colors"
+          >
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.40z"
+              />
+            </svg>
+          </a>
         </div>
       </div>
     </footer>
+
+    <script>
+      // Menu mobile simples
+      function toggleMenu() {
+        const menu = document.getElementById("mobileMenu");
+        menu.classList.toggle("active");
+      }
+
+      // Animações de scroll básicas
+      function handleScroll() {
+        const elements = document.querySelectorAll(".fade-in");
+
+        elements.forEach((element) => {
+          const elementTop = element.getBoundingClientRect().top;
+          const elementVisible = 150;
+
+          if (elementTop < window.innerHeight - elementVisible) {
+            element.classList.add("visible");
+          }
+        });
+      }
+
+      window.addEventListener("scroll", handleScroll);
+      window.addEventListener("load", handleScroll);
+    </script>
   </body>
 </html>
