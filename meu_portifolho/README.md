@@ -1,4 +1,4 @@
-# 🌐 Meu Portfólio Web
+# 🌐 Portfólio - Renan Gomes Lobo
 
 > **⚠️ REPOSITÓRIO APENAS PARA VISUALIZAÇÃO**  
 > Este código é disponibilizado apenas para demonstração das minhas habilidades.  
@@ -15,9 +15,7 @@ Portfólio pessoal desenvolvido com HTML5, CSS3, JavaScript e TailwindCSS.
 - App Mobile Multiplataforma
 
 ### 🛠️ Tecnologias Utilizadas:
-- HTML5
-- CSS3
-- JavaScript
+- HTML5, CSS3, JavaScript
 - TailwindCSS
 - Design Responsivo
 
